@@ -115,7 +115,25 @@ run '~/.tmux/plugins/tpm/tpm'
 set -g @plugin 'github_username/plugin_name'
 ```
 
-#### おすすめプラグイン
+### インストール済みプラグイン
+
+#### Catppuccin テーマ
+```tmux
+set -g @plugin 'catppuccin/tmux#v2.1.3'
+set -g @catppuccin_flavor 'mocha'
+```
+
+美しい Catppuccin カラーテーマを適用します。
+
+**利用可能なフレーバー:**
+- `latte` - ライトテーマ
+- `frappe` - ダークテーマ（柔らかめ）
+- `macchiato` - ダークテーマ（中間）
+- `mocha` - ダークテーマ（最も暗い、デフォルト）
+
+フレーバーを変更するには、`set -g @catppuccin_flavor 'フレーバー名'` を編集してください。
+
+#### おすすめの追加プラグイン
 - `tmux-plugins/tmux-resurrect` - tmuxセッションの保存・復元
 - `tmux-plugins/tmux-yank` - クリップボード統合の改善
 - `tmux-plugins/tmux-pain-control` - ペイン操作の追加機能
