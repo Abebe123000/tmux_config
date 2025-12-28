@@ -25,5 +25,16 @@ fi
 echo "Creating symlink: ${TMUX_CONF} -> ${SCRIPT_DIR}/tmux.conf"
 ln -s "${SCRIPT_DIR}/tmux.conf" "${TMUX_CONF}"
 
+# Install tpm (Tmux Plugin Manager) if not already installed
+TPM_DIR="${HOME}/.tmux/plugins/tpm"
+if [ ! -d "${TPM_DIR}" ]; then
+    echo "Installing Tmux Plugin Manager (tpm)..."
+    git clone https://github.com/tmux-plugins/tpm "${TPM_DIR}"
+    echo "tpm installed successfully!"
+else
+    echo "tpm is already installed at ${TPM_DIR}"
+fi
+
 echo "Installation complete!"
 echo "Reload tmux config with: tmux source-file ~/.config/tmux/tmux.conf"
+echo "To install plugins, press: Prefix + I (Ctrl+Space then I)"
